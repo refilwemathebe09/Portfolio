@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refilwe Mathebe — Quantity Surveyor & Emerging Data Analyst</title>
+<meta name="description" content="Portfolio of Refilwe Mathebe — Quantity Surveying graduate building the bridge between construction, data and technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141C33;
+    --navy:#1E3A6E;
+    --blue:#3A5FA0;
+    --blue-soft:#B9C9E8;
+    --violet:#6E63D6;
+    --violet-soft:#D6D1F5;
+    --bg:#F6F7FB;
+    --card:#FFFFFF;
+    --line:#DDE2EE;
+    --grey:#5B6478;
+    --grey-light:#8891A3;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif; font-weight:500; color:var(--ink); letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em;}
+  img{max-width:100%; display:block;}
+  :focus-visible{outline:2.5px solid var(--violet); outline-offset:3px; border-radius:4px;}
+
+  /* ---------- Blueprint grid backdrop ---------- */
+  .blueprint{
+    position:relative;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:42px 42px;
+  }
+  .blueprint::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(246,247,251,0) 0%, var(--bg) 92%);
+    pointer-events:none;
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  section{padding:110px 0;}
+  @media (max-width:720px){ section{padding:72px 0;} }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--violet);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1.5px; background:var(--violet);
+    display:inline-block;
+  }
+
+  /* ---------- Nav ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(246,247,251,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:74px;
+  }
+  .logo{
+    font-family:'Fraunces',serif; font-weight:500; font-size:19px; color:var(--ink);
+    display:flex; align-items:center; gap:9px;
+  }
+  .logo .node{width:8px;height:8px;border-radius:50%;background:var(--violet);}
+  .nav-links{display:flex; gap:34px; align-items:center;}
+  .nav-links a{
+    font-size:14.5px; font-weight:500; color:var(--grey);
+    transition:color .2s ease;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{
+    background:var(--navy); color:#fff !important; padding:9px 20px;
+    border-radius:30px; font-size:13.5px; font-weight:600;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .nav-cta:hover{background:var(--violet); transform:translateY(-1px);}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px;}
+  .nav-toggle span{width:22px; height:2px; background:var(--ink); display:block;}
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px;
+    background:var(--card); border-bottom:1px solid var(--line);
+    padding:8px 28px 18px;
+  }
+  .mobile-menu a{padding:12px 0; font-size:15px; color:var(--ink); border-bottom:1px solid var(--line); font-weight:500;}
+  .mobile-menu a:last-child{border-bottom:none;}
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    .mobile-menu.open{display:flex;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding-top:190px; padding-bottom:120px; position:relative;
+  }
+  .hero .wrap{position:relative; z-index:2;}
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center;
+  }
+  .hero-kicker{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--blue); margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(42px,6vw,72px); line-height:1.03; margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic; color:var(--violet);}
+  .hero-role{
+    font-size:19px; font-weight:600; color:var(--navy); margin-bottom:20px;
+    display:flex; flex-wrap:wrap; gap:8px 0;
+  }
+  .hero-role .sep{color:var(--blue-soft); margin:0 12px; font-weight:400;}
+  .hero p.lede{
+    font-size:17px; color:var(--grey); max-width:52ch; margin-bottom:38px;
+  }
+  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    padding:14px 26px; border-radius:30px; font-weight:600; font-size:14.5px;
+    display:inline-flex; align-items:center; gap:8px; transition:all .2s ease;
+    border:1.5px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--navy); color:#fff;}
+  .btn-primary:hover{background:var(--violet); transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(110,99,214,0.5);}
+  .btn-outline{border-color:var(--line); color:var(--ink); background:var(--card);}
+  .btn-outline:hover{border-color:var(--navy); transform:translateY(-2px);}
+  .btn-ghost{color:var(--navy); font-weight:600; padding:14px 4px;}
+  .btn-ghost:hover{color:var(--violet);}
+
+  /* Bridge signature graphic */
+  .bridge-card{
+    position:relative; background:var(--card); border:1px solid var(--line);
+    border-radius:var(--radius); padding:34px 28px 28px;
+    box-shadow:0 30px 60px -30px rgba(20,28,51,0.25);
+  }
+  .bridge-svg{width:100%; height:auto; display:block;}
+  .bridge-caption{
+    display:flex; justify-content:space-between; margin-top:18px;
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--grey-light);
+    text-transform:uppercase; letter-spacing:0.08em;
+  }
+  .truss-line{stroke:var(--blue-soft); stroke-width:1.6;}
+  .truss-line.active{stroke:var(--violet); stroke-dasharray:6 6; animation:dash 3.5s linear infinite;}
+  @keyframes dash{to{stroke-dashoffset:-60;}}
+  .node-dot{fill:var(--card); stroke:var(--navy); stroke-width:2.4;}
+  .node-dot.violet{stroke:var(--violet);}
+
+  /* ---------- Section headers ---------- */
+  .sec-head{max-width:640px; margin-bottom:56px;}
+  .sec-head h2{font-size:clamp(30px,4vw,42px); margin-bottom:14px;}
+  .sec-head p{color:var(--grey); font-size:16px;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:start;}
+  .monogram{
+    aspect-ratio:4/5; border-radius:var(--radius);
+    background:linear-gradient(155deg, var(--navy) 0%, var(--violet) 100%);
+    position:relative; overflow:hidden;
+  }
+  .monogram::after{
+    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
+    background-size:28px 28px;
+  }
+  .monogram img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    mix-blend-mode:normal;
+  }
+  .monogram span{
+    font-family:'Fraunces',serif; font-size:96px; color:rgba(255,255,255,0.94); font-weight:400;
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:1;
+  }
+  .about-copy p{color:var(--grey); font-size:16px; margin-bottom:18px;}
+  .about-copy strong{color:var(--ink); font-weight:600;}
+  .focus-list{display:grid; grid-template-columns:1fr 1fr; gap:10px 22px; margin-top:26px; list-style:none;}
+  .focus-list li{
+    font-size:14.5px; color:var(--navy); font-weight:500;
+    display:flex; align-items:center; gap:9px; padding:9px 0; border-bottom:1px solid var(--line);
+  }
+  .focus-list li::before{content:"—"; color:var(--violet);}
+
+  /* ---------- Timeline (Education) ---------- */
+  .timeline{position:relative; padding-left:34px;}
+  .timeline::before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1.5px; background:var(--line);}
+  .t-item{position:relative; padding-bottom:40px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:""; position:absolute; left:-34px; top:4px; width:13px; height:13px; border-radius:50%;
+    background:var(--card); border:2.4px solid var(--navy);
+  }
+  .t-item .t-date{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--blue); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;}
+  .t-item h4{font-size:19px; margin-bottom:6px;}
+  .t-item p{color:var(--grey); font-size:15px; margin-bottom:8px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--navy);
+    background:var(--blue-soft); padding:4px 11px; border-radius:20px;
+  }
+  .tag.violet{color:var(--violet); background:var(--violet-soft);}
+
+  /* ---------- Programmes cards ---------- */
+  .prog-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .prog-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px 20px; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .prog-card:hover{transform:translateY(-5px); box-shadow:0 20px 40px -24px rgba(20,28,51,0.3);}
+  .prog-status{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--violet); margin-bottom:12px; display:inline-block;
+  }
+  .prog-card h4{font-size:16.5px; margin-bottom:8px; line-height:1.3;}
+  .prog-card p{font-size:13.5px; color:var(--grey);}
+  @media (max-width:920px){ .prog-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .prog-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Experience ---------- */
+  .exp-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:36px; margin-bottom:22px;
+  }
+  .exp-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:18px;}
+  .exp-top h3{font-size:23px;}
+  .exp-top .t-date{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--blue); text-transform:uppercase;}
+  .exp-role{color:var(--grey); font-size:15px; margin-bottom:20px;}
+  .exp-cols{display:grid; grid-template-columns:1.3fr 1fr; gap:30px;}
+  .exp-cols ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .exp-cols li{font-size:14.5px; color:var(--grey); padding-left:20px; position:relative;}
+  .exp-cols li::before{content:"›"; position:absolute; left:0; color:var(--violet); font-weight:700;}
+  .tool-title{font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.07em; color:var(--grey-light); margin-bottom:12px;}
+  @media (max-width:760px){ .exp-cols{grid-template-columns:1fr;} .exp-card{padding:26px;} }
+
+  /* Leadership pills */
+  .lead-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .lead-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:28px;}
+  .lead-card h4{font-size:17px; margin-bottom:10px;}
+  .lead-card p{font-size:14.5px; color:var(--grey);}
+  @media (max-width:760px){ .lead-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Skills ---------- */
+  .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .skill-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:26px 22px;}
+  .skill-card h4{font-size:15px; margin-bottom:16px; display:flex; align-items:center; gap:9px;}
+  .skill-card h4 .node{width:7px;height:7px;border-radius:50%;background:var(--violet);}
+  .skill-card ul{list-style:none; display:flex; flex-direction:column; gap:9px;}
+  .skill-card li{font-size:13.8px; color:var(--grey); display:flex; justify-content:space-between; align-items:center;}
+  .skill-card li .dev{font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--violet); background:var(--violet-soft); padding:2px 7px; border-radius:10px; text-transform:uppercase;}
+  @media (max-width:920px){ .skills-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .skills-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Projects ---------- */
+  .filter-row{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px;}
+  .filter-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;
+    padding:9px 17px; border-radius:20px; border:1.5px solid var(--line); background:var(--card); color:var(--grey);
+    cursor:pointer; transition:all .2s ease;
+  }
+  .filter-btn:hover{border-color:var(--blue);}
+  .filter-btn.active{background:var(--navy); border-color:var(--navy); color:#fff;}
+  .proj-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+  .proj-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .proj-card:hover{transform:translateY(-5px); box-shadow:0 24px 46px -28px rgba(20,28,51,0.32);}
+  .proj-cat{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; color:var(--blue); letter-spacing:0.06em; margin-bottom:10px;}
+  .proj-card h4{font-size:19px; margin-bottom:10px;}
+  .proj-card p{font-size:14.5px; color:var(--grey); margin-bottom:16px; flex-grow:1;}
+  .proj-meta{font-size:13px; color:var(--ink); margin-bottom:14px;}
+  .proj-meta strong{color:var(--navy);}
+  .proj-link{font-size:13.5px; font-weight:600; color:var(--navy); display:inline-flex; align-items:center; gap:6px;}
+  .proj-link:hover{color:var(--violet);}
+  @media (max-width:760px){ .proj-grid{grid-template-columns:1fr;} }
+
+  .building-note{
+    margin-top:44px; background:linear-gradient(135deg, var(--navy), var(--violet));
+    border-radius:var(--radius); padding:34px 36px; color:#fff;
+  }
+  .building-note h4{color:#fff; font-size:20px; margin-bottom:10px;}
+  .building-note p{color:rgba(255,255,255,0.85); font-size:15px; max-width:70ch;}
+
+  /* ---------- Vision / Qualities ---------- */
+  .vision-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .vision-copy p{color:var(--grey); font-size:16px; margin-bottom:16px;}
+  .vision-list{list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:8px;}
+  .vision-list li{display:flex; gap:12px; font-size:14.5px; color:var(--ink); align-items:flex-start;}
+  .vision-list .num{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--violet); padding-top:2px;}
+  .quality-cloud{display:flex; flex-wrap:wrap; gap:10px;}
+  .quality-pill{
+    font-size:14px; font-weight:500; padding:10px 18px; border-radius:24px; border:1.5px solid var(--line); color:var(--navy);
+  }
+  .quality-pill:nth-child(3n){background:var(--violet-soft); border-color:transparent; color:var(--violet);}
+  .quality-pill:nth-child(3n+1){background:var(--blue-soft); border-color:transparent;}
+  @media (max-width:820px){ .vision-grid{grid-template-columns:1fr; gap:40px;} }
+
+  /* ---------- Contact ---------- */
+  .contact-sec{
+    background:var(--navy); color:#fff; border-radius:28px; margin:0 20px; padding:80px 60px;
+    position:relative; overflow:hidden;
+  }
+  .contact-sec::before{
+    content:""; position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size:40px 40px;
+  }
+  .contact-inner{position:relative; z-index:1; display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px;}
+  .contact-sec h2{color:#fff; font-size:clamp(30px,4vw,44px); margin-bottom:16px;}
+  .contact-sec p{color:rgba(255,255,255,0.78); font-size:16px; max-width:48ch; margin-bottom:30px;}
+  .contact-links{display:flex; flex-direction:column; gap:2px;}
+  .contact-links a{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.18);
+    font-size:15.5px; font-weight:500; color:#fff; transition:opacity .2s ease;
+  }
+  .contact-links a:hover{opacity:0.7;}
+  .contact-links a .mono{font-size:12px; color:rgba(255,255,255,0.55);}
+  form.contact-form{display:flex; flex-direction:column; gap:14px;}
+  .contact-form input, .contact-form textarea{
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:10px;
+    padding:14px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14.5px;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(255,255,255,0.5);}
+  .contact-form textarea{resize:vertical; min-height:100px;}
+  .contact-form button{
+    background:#fff; color:var(--navy); border:none; padding:14px; border-radius:10px;
+    font-weight:700; font-size:14.5px; cursor:pointer; transition:transform .2s ease;
+  }
+  .contact-form button:hover{transform:translateY(-2px);}
+  .contact-form button:disabled{opacity:0.7; cursor:not-allowed; transform:none;}
+  .form-note{font-size:12.5px; color:rgba(255,255,255,0.55); margin-top:4px; display:none;}
+  .form-note.show{display:block;}
+  .form-note.status-sending{color:rgba(255,255,255,0.75);}
+  .form-note.status-sent{color:#8CE4B0; font-weight:600;}
+  .form-note.status-error{color:#FF9E9E; font-weight:600;}
+  .spin{
+    display:inline-block; width:13px; height:13px; border-radius:50%;
+    border:2px solid rgba(30,58,110,0.25); border-top-color:var(--navy);
+    animation:spin .7s linear infinite; margin-right:7px; vertical-align:-2px;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @media (max-width:820px){ .contact-inner{grid-template-columns:1fr;} .contact-sec{padding:52px 28px; margin:0 12px; border-radius:20px;} }
+
+  footer{padding:44px 0 30px; text-align:center;}
+  footer p{font-size:13px; color:var(--grey-light);}
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr; gap:44px;}
+    .about-grid{grid-template-columns:1fr; gap:36px;}
+    .monogram{max-width:280px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="logo"><span class="node"></span>Refilwe Mathebe</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#vision">Vision</a>
+      <a href="#contact" class="nav-cta">Contact Me</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#vision">Vision</a>
+    <a href="#contact">Contact Me</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero blueprint">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-kicker">Johannesburg, South Africa</div>
+        <h1>Building the bridge between <em>construction</em> and <em>data</em>.</h1>
+        <div class="hero-role">
+          Quantity Surveying Graduate <span class="sep">·</span> Emerging Data &amp; Business Analyst <span class="sep">·</span> Construction-Tech Innovator
+        </div>
+        <p class="lede">I combine construction experience, commercial awareness and analytical thinking with developing technology skills to explore better ways of managing projects, costs, information and business decisions.</p>
+        <div class="btn-row">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="Refilwe_Mathebe_CV.pdf" download class="btn btn-outline">Download My CV</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me →</a>
+        </div>
+      </div>
+      <div class="bridge-card reveal">
+        <svg class="bridge-svg" viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="150" x2="300" y2="150" class="truss-line"/>
+          <line x1="20" y1="150" x2="70" y2="60" class="truss-line"/>
+          <line x1="70" y1="60" x2="120" y2="150" class="truss-line"/>
+          <line x1="70" y1="60" x2="20" y2="150" class="truss-line"/>
+          <line x1="120" y1="150" x2="160" y2="90" class="truss-line active"/>
+          <line x1="160" y1="90" x2="200" y2="150" class="truss-line active"/>
+          <line x1="200" y1="150" x2="250" y2="60" class="truss-line"/>
+          <line x1="250" y1="60" x2="300" y2="150" class="truss-line"/>
+          <line x1="250" y1="60" x2="200" y2="150" class="truss-line"/>
+          <circle cx="20" cy="150" r="5" class="node-dot"/>
+          <circle cx="70" cy="60" r="5" class="node-dot"/>
+          <circle cx="120" cy="150" r="5" class="node-dot"/>
+          <circle cx="160" cy="90" r="6" class="node-dot violet"/>
+          <circle cx="200" cy="150" r="5" class="node-dot"/>
+          <circle cx="250" cy="60" r="5" class="node-dot"/>
+          <circle cx="300" cy="150" r="5" class="node-dot"/>
+        </svg>
+        <div class="bridge-caption">
+          <span>Construction · Cost · Risk</span>
+          <span style="color:var(--violet)">Data · Systems · Insight</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="monogram reveal">
+        <img src="refilwe.png" alt="Portrait of Refilwe Mathebe" loading="lazy"
+             onerror="this.remove(); document.getElementById('monogramFallback').style.display='flex';">
+        <span id="monogramFallback" style="display:none;">RM</span>
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">About Me</div>
+        <h2 style="font-size:clamp(28px,3.6vw,38px); margin-bottom:22px;">A quantity surveyor learning to think in systems.</h2>
+        <p>I hold a <strong>Bachelor of Science in Construction Studies</strong> and a <strong>Bachelor of Science Honours in Quantity Surveying</strong> from the University of the Witwatersrand. That foundation gave me a working understanding of cost management, procurement, financial reporting, project coordination, commercial management, stakeholder engagement and risk identification the everyday mechanics of getting a project built on budget.</p>
+        <p>I'm not transitioning away from construction into technology. I'm building a bridge between the two combining practical industry knowledge with data and analytical capabilities I'm developing in parallel, including Python, SQL, data analysis and the fundamentals of artificial intelligence.</p>
+        <p>My long-term vision is to build practical digital tools and intelligent systems that solve real problems for quantity surveyors, construction companies, engineering firms, mining companies, financial institutions and other project-driven businesses.</p>
+        <ul class="focus-list">
+          <li>Cost management</li>
+          <li>Financial control</li>
+          <li>Project reporting</li>
+          <li>Procurement processes</li>
+          <li>Risk identification</li>
+          <li>Business decision-making</li>
+          <li>Operational efficiency</li>
+          <li>Stakeholder collaboration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="blueprint">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Education</div>
+        <h2>Academic foundation</h2>
+        <p>Built at the University of the Witwatersrand, with a track record of academic excellence.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="t-item">
+          <div class="t-date">2019 – 2022 · Wits University</div>
+          <h4>BSc Construction Studies → BSc Honours, Quantity Surveying</h4>
+          <p>Academic average of approximately 70% throughout undergraduate study, culminating in an Honours degree in Quantity Surveying.</p>
+          <div class="tag-row"><span class="tag">Cost Management</span><span class="tag">Procurement</span><span class="tag">Contract Law</span></div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">2022</div>
+          <h4>PG Honours Merit Award</h4>
+          <p>Awarded funding in recognition of academic excellence during Honours-level study.</p>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Raymond Ackerman Academy · UJ</div>
+          <h4>Entrepreneurship &amp; Business Management Training</h4>
+          <p>Completed entrepreneurship training through the Raymond Ackerman Academy at the University of Johannesburg.</p>
+          <div class="tag-row"><span class="tag violet">Business Management</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS DEVELOPMENT PROGRAMMES -->
+  <section id="programmes">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Continuous Learning</div>
+        <h2>Skills-development programmes</h2>
+        <p>I'm actively building technical capability alongside my construction background and here's what's completed, in progress, or developing.</p>
+      </div>
+      <div class="prog-grid reveal">
+        <div class="prog-card">
+          <span class="prog-status">In progress</span>
+          <h4>Capaciti AI Skills Acceleration Programme</h4>
+          <p>Hands-on exposure to applied AI concepts and digital problem-solving.</p>
+        </div>
+        <div class="prog-card">
+          <span class="prog-status">Completed</span>
+          <h4>FNB App Academy</h4>
+          <p>Introductory training in app development and digital product thinking.</p>
+        </div>
+        <div class="prog-card">
+          <span class="prog-status">Completed</span>
+          <h4>NEMISA &amp; UWC CoLab Programme</h4>
+          <p>Digital-skills collaboration through NEMISA and the University of the Western Cape.</p>
+        </div>
+        <div class="prog-card">
+          <span class="prog-status">Developing</span>
+          <h4>Microsoft Data Analyst Pathway</h4>
+          <p>Working through Microsoft's learning path for data analysis and Power BI, plus Python and SQL fundamentals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="blueprint">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Experience</div>
+        <h2>Professional experience</h2>
+        <p>Two years supporting cost management on live engineering and industrial projects.</p>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-top">
+          <div>
+            <h3>Junior Quantity Surveyor</h3>
+            <div class="exp-role">Aurex Constructors (Sasol Projects) · Secunda, Mpumalanga</div>
+          </div>
+          <div class="t-date">June 2023 – June 2025</div>
+        </div>
+        <div class="exp-cols">
+          <ul>
+            <li>Supported cost management across mechanical, electrical and civil projects, starting at R3–4 million and progressing to projects worth up to R20 million</li>
+            <li>Prepared payment applications, monthly claims, and cost and financial reports to support project control</li>
+            <li>Monitored and recorded variation orders and additional client requests, adjusting costs for out-of-scope work</li>
+            <li>Supported procurement coordination for the timely delivery of materials and services within budget</li>
+            <li>Conducted site measurements and quantity verification for accurate reporting and valuations</li>
+            <li>Assisted in identifying financial risks and mitigation strategies, and supported construction shutdowns</li>
+            <li>Prepared project dashboards and collaborated with engineers, project teams and suppliers</li>
+          </ul>
+          <div>
+            <div class="tool-title">Tools &amp; Contracts</div>
+            <div class="tag-row">
+              <span class="tag">BuildSmart</span>
+              <span class="tag">WinQS</span>
+              <span class="tag">Excel</span>
+              <span class="tag">CCS Candy</span>
+              <span class="tag">SharePoint</span>
+              <span class="tag">Microsoft Teams</span>
+              <span class="tag violet">NEC Contracts</span>
+              <span class="tag violet">JBCC Contracts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-top">
+          <div>
+            <h3>QS Tutor</h3>
+            <div class="exp-role">Estimation and Cost · Johannesburg</div>
+          </div>
+          <div class="t-date">Mar 2022 – Oct 2022</div>
+        </div>
+        <p style="color:var(--grey); font-size:14.5px;">Conducted tutorials and academic support that improved students' understanding of cost-estimation principles and average scores, while organising study sessions and grading assessments.</p>
+      </div>
+
+      <div class="exp-card reveal" style="margin-bottom:0;">
+        <div class="exp-top">
+          <div>
+            <h3>Store Manager</h3>
+            <div class="exp-role">Sissyboy (BlueJeanTraders) · Johannesburg</div>
+          </div>
+          <div class="t-date">Mar 2021 – Dec 2022</div>
+        </div>
+        <p style="color:var(--grey); font-size:14.5px;">Coordinated a team of four, analysed product performance and pricing trends to inform management decisions, and managed cash handling and reconciliations, contributing to 10–15% monthly sales growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Leadership</div>
+        <h2>Leadership across industries</h2>
+        <p>From retail floor to assistant store management in around eight months and active participation in professional bodies.</p>
+      </div>
+      <div class="lead-grid reveal">
+        <div class="lead-card">
+          <h4>Retail leadership</h4>
+          <p>Progressed from Sales Consultant to an assistant management role, leading a small team, managing performance targets, stock control and cash-office responsibilities, and making decisions in a fast-paced environment.</p>
+        </div>
+        <div class="lead-card">
+          <h4>Professional bodies</h4>
+          <p>Sub-committee member of the Chartered Institute of Building (Wits) and the Women's Property Network, alongside community and environmental initiatives.</p>
+        </div>
+        <div class="lead-card">
+          <h4>Sales &amp; negotiation</h4>
+          <p>Built persuasive communication and negotiation skills through direct sales, balancing client needs with business objectives to grow revenue.</p>
+        </div>
+        <div class="lead-card">
+          <h4>What it built</h4>
+          <p>These experiences strengthened my communication, confidence, adaptability, stakeholder management and understanding of people skills that carry directly into project environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="blueprint">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Capability</div>
+        <h2>Skills &amp; expertise</h2>
+        <p>Construction and commercial fundamentals, with data, technology and business capability growing alongside them.</p>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-card">
+          <h4><span class="node"></span>Construction &amp; Commercial</h4>
+          <ul>
+            <li>Quantity surveying</li>
+            <li>Cost management</li>
+            <li>Procurement</li>
+            <li>Financial reporting</li>
+            <li>Payment applications</li>
+            <li>Contract administration</li>
+            <li>Risk identification</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4><span class="node"></span>Data &amp; Technology</h4>
+          <ul>
+            <li>Excel</li>
+            <li>Python <span class="dev">Developing</span></li>
+            <li>SQL <span class="dev">Developing</span></li>
+            <li>Data analysis <span class="dev">Developing</span></li>
+            <li>Data visualisation <span class="dev">Developing</span></li>
+            <li>AI fundamentals</li>
+            <li>Dashboard reporting</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4><span class="node"></span>Business &amp; Analytical</h4>
+          <ul>
+            <li>Business analysis</li>
+            <li>Quantitative reasoning</li>
+            <li>Financial analysis</li>
+            <li>Process improvement</li>
+            <li>Problem-solving</li>
+            <li>Commercial awareness</li>
+            <li>Decision support</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4><span class="node"></span>Leadership &amp; Interpersonal</h4>
+          <ul>
+            <li>Team leadership</li>
+            <li>Communication</li>
+            <li>Customer focus</li>
+            <li>Presentation</li>
+            <li>Collaboration</li>
+            <li>Adaptability</li>
+            <li>Relationship building</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Certifications</div>
+        <h2>Certificates</h2>
+      </div>
+      <div class="tag-row reveal" style="gap:12px;">
+        <span class="tag" style="font-size:13px; padding:9px 16px;">Entrepreneurship &amp; Business Management — University of Johannesburg</span>
+        <span class="tag violet" style="font-size:13px; padding:9px 16px;">Financial Literacy — Udemy</span>
+        <span class="tag violet" style="font-size:13px; padding:9px 16px;">Data Analyst / Specialist Desktop — Udemy</span>
+        <span class="tag violet" style="font-size:13px; padding:9px 16px;">Microsoft Power BI Data Analyst — Udemy</span>
+        <span class="tag" style="font-size:13px; padding:9px 16px;">Quantity Surveying &amp; Building Estimation — Udemy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="blueprint">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Projects</div>
+        <h2>Projects worked on</h2>
+        <p>A mix of construction, data and business-analysis work. Case studies are being written up as real project material is finalised the cards below outline scope, tools and intended outcomes.</p>
+      </div>
+
+      <div class="filter-row reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="construction">Construction</button>
+        <button class="filter-btn" data-filter="data">Data</button>
+        <button class="filter-btn" data-filter="business">Business</button>
+        <button class="filter-btn" data-filter="tech">Construction-Tech</button>
+      </div>
+
+      <div class="proj-grid reveal" id="projGrid">
+        <div class="proj-card" data-cat="construction">
+          <div class="proj-cat">Construction · Financial Dashboard</div>
+          <h4>Project Cost &amp; Claims Dashboard</h4>
+          <p>A working dashboard concept to track monthly claims, variation orders and budget variance across active engineering projects, built from real payment-application workflows.</p>
+          <div class="proj-meta"><strong>Tools:</strong> Excel, BuildSmart, Power BI</div>
+          
+        </div>
+        <div class="proj-card" data-cat="construction data">
+          <div class="proj-cat">Procurement Analysis</div>
+          <h4>Procurement &amp; Supplier Turnaround Analysis</h4>
+          <p>Analysing procurement lead times and supplier performance data to surface where delivery delays put project budgets and schedules at risk.</p>
+          <div class="proj-meta"><strong>Tools:</strong> Excel, SQL <span class="dev" style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--violet); background:var(--violet-soft); padding:2px 7px; border-radius:10px; text-transform:uppercase;">Developing</span></div>
+          
+        </div>
+        <div class="proj-card" data-cat="data">
+          <div class="proj-cat">Data Analysis</div>
+          <h4>Construction Spend Pattern Analysis</h4>
+          <p>Exploring historical project-expenditure data with Python to identify cost trends and early indicators of budget overrun across project types.</p>
+          <div class="proj-meta"><strong>Tools:</strong> Python, Excel, Power BI</div>
+          
+        </div>
+        <div class="proj-card" data-cat="business">
+          <div class="proj-cat">Business-Process Improvement</div>
+          <h4>Reporting Workflow Efficiency Review</h4>
+          <p>Mapping the manual steps in monthly cost-reporting workflows to identify where structured templates and light automation could cut turnaround time.</p>
+          <div class="proj-meta"><strong>Tools:</strong> Excel, SharePoint, Process Mapping</div>
+          
+        </div>
+        <div class="proj-card" data-cat="tech data">
+          <div class="proj-cat">AI / Application Concept</div>
+          <h4>Risk-Flagging Assistant Concept</h4>
+          <p>An early concept for a lightweight tool that flags cost and schedule risk indicators from project reports, built on AI fundamentals I'm currently developing.</p>
+          <div class="proj-meta"><strong>Tools:</strong> Python, AI Fundamentals</div>
+          
+        </div>
+        <div class="proj-card" data-cat="business construction">
+          <div class="proj-cat">Quantitative &amp; Financial Analysis</div>
+          <h4>Project Valuation Comparison Study</h4>
+          <p>Comparing valuation and claim accuracy across projects of different scale (R3M–R20M) to identify where measurement processes could be tightened.</p>
+          <div class="proj-meta"><strong>Tools:</strong> Excel, WinQS, CCS Candy</div>
+          
+        </div>
+      </div>
+
+      <div class="building-note reveal">
+        <h4>What I'm building</h4>
+        <p>Beyond finished projects, I'm prototyping ideas for tools that make quantity surveying, construction finance and project reporting more efficient, from smarter cost dashboards to early risk-detection concepts. This section will grow as those prototypes take shape.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision">
+    <div class="wrap vision-grid">
+      <div class="vision-copy reveal">
+        <div class="eyebrow">Career Vision</div>
+        <h2 style="font-size:clamp(28px,3.6vw,38px); margin-bottom:20px;">Where construction, data and business meet</h2>
+        <p>My goal is to work across construction, project management, data, business analysis and finance. Quantitative analysis is a developing career direction for me, not yet an established title but it's the connective thread across everything I do.</p>
+        <ul class="vision-list">
+          <li><span class="num">01</span>Understand project costs and commercial performance</li>
+          <li><span class="num">02</span>Analyse information and identify patterns</li>
+          <li><span class="num">03</span>Translate business problems into practical requirements</li>
+          <li><span class="num">04</span>Communicate with technical and non-technical stakeholders</li>
+          <li><span class="num">05</span>Support evidence-based decision-making</li>
+          <li><span class="num">06</span>Contribute to the development of digital solutions</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Personal Qualities</div>
+        <div class="quality-cloud">
+          <span class="quality-pill">Analytical</span>
+          <span class="quality-pill">Ambitious</span>
+          <span class="quality-pill">Curious</span>
+          <span class="quality-pill">Adaptable</span>
+          <span class="quality-pill">Commercially aware</span>
+          <span class="quality-pill">People-focused</span>
+          <span class="quality-pill">Solutions-oriented</span>
+          <span class="quality-pill">Continuous learner</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-bottom:100px;">
+    <div class="contact-sec">
+      <div class="contact-inner">
+        <div>
+          <div class="eyebrow" style="color:var(--blue-soft);">Get In Touch</div>
+          <h2>Let's build something together.</h2>
+          <p>Open to graduate opportunities, internships, collaborations and innovative projects at the intersection of construction, data and technology.</p>
+          <div class="contact-links">
+            <a href="mailto:refilwemathebe09@gmail.com">Email <span class="mono">refilwemathebe09@gmail.com</span></a>
+            <a href="tel:+27780974909">Phone <span class="mono">078 097 4909</span></a>
+            <a href="https://www.linkedin.com/in/refilwe-mathebe-72555b22b/" target="_blank" rel="noopener">LinkedIn <span class="mono">Connect →</span></a>
+            <a href="https://github.com/refilwemathebe09" target="_blank" rel="noopener">GitHub <span class="mono">View Repos →</span></a>
+            <a href="Refilwe_Mathebe_CV.pdf" download>Download CV <span class="mono">PDF →</span></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mbgrnnbk" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="Tell me about the opportunity..." required></textarea>
+          <button type="submit" id="formSubmitBtn">
+            <span id="formBtnText">Send Message</span>
+          </button>
+          <p class="form-note" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Refilwe Mathebe · Johannesburg, South Africa · Built with intention.</p>
+</footer>
+
+<script>
+  // Mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const expanded = mobileMenu.classList.contains('open');
+    navToggle.setAttribute('aria-expanded', expanded);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Contact form — Formspree integration with status states
+  const contactForm = document.getElementById('contactForm');
+  const formMsg = document.getElementById('formMsg');
+  const submitBtn = document.getElementById('formSubmitBtn');
+  const btnText = document.getElementById('formBtnText');
+
+  function setFormStatus(state, text) {
+    formMsg.classList.remove('status-sending', 'status-sent', 'status-error');
+    formMsg.classList.add('show');
+    if (state) formMsg.classList.add('status-' + state);
+    formMsg.innerHTML = text;
+  }
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    btnText.textContent = 'Sending…';
+    setFormStatus('sending', '<span class="spin"></span>Sending your message…');
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        setFormStatus('sent', '✓ Message sent — thanks! I\'ll get back to you shortly.');
+        contactForm.reset();
+        btnText.textContent = 'Send Message';
+        submitBtn.disabled = false;
+      } else {
+        let errorText = 'Something went wrong — please try again or email me directly.';
+        try {
+          const data = await response.json();
+          if (data && data.errors && data.errors.length) {
+            errorText = data.errors.map(er => er.message || er.field).join(', ');
+          } else if (data && data.error) {
+            errorText = data.error;
+          }
+        } catch (parseErr) {
+          // response body wasn't JSON — keep default message
+        }
+        setFormStatus('error', '✕ Not sent: ' + errorText);
+        btnText.textContent = 'Send Message';
+        submitBtn.disabled = false;
+      }
+    } catch (networkErr) {
+      setFormStatus('error', '✕ Not sent: network error — check your connection and try again.');
+      btnText.textContent = 'Send Message';
+      submitBtn.disabled = false;
+    }
+  });
+
+  // Project filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projCards = document.querySelectorAll('#projGrid .proj-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      projCards.forEach(card => {
+        const cats = card.dataset.cat.split(' ');
+        card.style.display = (f === 'all' || cats.includes(f)) ? 'flex' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
